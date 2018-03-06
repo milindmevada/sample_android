@@ -1,0 +1,53 @@
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+ext {
+    /*Libraries*/
+    supportLib = '27.0.2'
+    rxJava2 = '2.1.5'
+    rxAndroid = '2.0.2'
+    rxKotlin = '2.1.0'
+    rxBinding = '2.1.1'
+    rxNetwork = '0.9.1'
+    rxActivity = '0.4.5-2.x'
+    okHttp = '3.8.1'
+    retrofit = '2.3.0'
+    dagger = '2.11'
+    constraint = '1.0.2'
+    anko = '0.10.2'
+    gson = '2.8.1'
+
+    commonDependencies = [
+
+            rxJava2           : "io.reactivex.rxjava2:rxjava:${rxJava2}",
+            rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroid}",
+            rxKotlin          : "io.reactivex.rxjava2:rxkotlin:${rxKotlin}",
+            rxBinding         : "com.jakewharton.rxbinding2:rxbinding-kotlin:${rxBinding}",
+            rxBindingSupport  : "com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:${rxBinding}",
+            rxBindingAppCompat: "com.jakewharton.rxbinding2:rxbinding-appcompat-v7-kotlin:${rxBinding}",
+            rxBindingDesign   : "com.jakewharton.rxbinding2:rxbinding-design-kotlin:${rxBinding}",
+            rxBindingRv       : "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:${rxBinding}",
+
+            okHttp            : "com.squareup.okhttp3:okhttp:${okHttp}",
+            okHttpLogging     : "com.squareup.okhttp3:logging-interceptor:${okHttp}",
+            retrofit          : "com.squareup.retrofit2:retrofit:${retrofit}",
+            retrofitRxAdapter : "com.squareup.retrofit2:adapter-rxjava2:${retrofit}",
+            retrofitRx1Adapter: "com.squareup.retrofit2:adapter-rxjava:${retrofit}",
+            retrofitGson      : "com.squareup.retrofit2:converter-gson:${retrofit}",
+
+            dagger            : "com.google.dagger:dagger:${dagger}",
+            daggerCompiler    : "com.google.dagger:dagger-compiler:${dagger}",
+
+            constraint        : "com.android.support.constraint:constraint-layout:${constraint}",
+            supportAppCompat  : "com.android.support:appcompat-v7:${supportLib}",
+            supportDesign     : "com.android.support:design:${supportLib}",
+            supportRv         : "com.android.support:recyclerview-v7:${supportLib}",
+            supportCv         : "com.android.support:cardview-v7:${supportLib}",
+            supportV4         : "com.android.support:support-v4:${supportLib}",
+            GoogleGSON        : "com.google.code.gson:gson:${rootProject.gson}",
+            kotlinAnko        : "org.jetbrains.anko:anko-commons:${anko}"
+    ]
+}

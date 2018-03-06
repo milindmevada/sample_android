@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Mitter Android</string>
+
+    <!--Main Activity-->
+    <string name="hint_message">Enter your message</string>
+    <string name="btn_submit">Submit</string>
+
+
+    <!--Response Messages-->
+    <string name="msg_200">world!</string>
+    <string name="msg_404">No value available</string>
+    <string name="msg_500">Please try again later</string>
+    <string name="msg_403">You don\'t have clearance!</string>
+    <string name="msg_422">Please send some valid Message</string>
+
+
+    <!--Common Error-->
+    <string name="err_invalid_message">Add Some text to send</string>
+    <string name="err_no_internet">Internet Connection not available</string>
+    <string name="err_unknown">@string/msg_500</string>
+
+</resources>

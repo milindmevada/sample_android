@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    def androidVersions = rootProject.ext.android
+    def endPoint = rootProject.ext.endpoints
+
+    compileSdkVersion androidVersions.compileSdkVersion
+    buildToolsVersion androidVersions.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.example.milind"
+        minSdkVersion androidVersions.minSdkVersion
+        targetSdkVersion androidVersions.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        debug {
+            buildConfigField "String", "API", endPoint.endPoint
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "String", "API", endPoint.endPoint
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+
+    implementation commonDependencies.rxJava2
+    implementation commonDependencies.rxAndroid
+    implementation commonDependencies.rxKotlin
+    implementation commonDependencies.rxBinding
+    implementation commonDependencies.rxBindingSupport
+    implementation commonDependencies.rxBindingAppCompat
+    implementation commonDependencies.rxBindingDesign
+    implementation commonDependencies.rxBindingRv
+
+    implementation commonDependencies.okHttp
+    implementation commonDependencies.okHttpLogging
+    implementation commonDependencies.retrofit
+    implementation commonDependencies.retrofitRxAdapter
+    implementation commonDependencies.retrofitGson
+
+    implementation commonDependencies.dagger
+    kapt commonDependencies.daggerCompiler
+
+    implementation commonDependencies.constraint
+    implementation commonDependencies.supportAppCompat
+    implementation commonDependencies.supportDesign
+    implementation commonDependencies.supportRv
+    implementation commonDependencies.supportCv
+    implementation commonDependencies.supportV4
+
+    implementation commonDependencies.kotlinAnko
+
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    implementation commonDependencies.GoogleGSON
+}
+
+kapt { generateStubs = true }
